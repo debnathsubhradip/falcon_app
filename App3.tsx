@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import Modal from "./components/modules/Modal";
 import TopBar from "./components/modules/TopBar";
-import HomeScreen from "./components/HomeScreen";
+import HomeScreen from "./components/screens/HomeScreen";
 
 export default function App() {
   return (

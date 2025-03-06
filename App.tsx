@@ -3,11 +3,42 @@ import { StyleSheet, Text, View, ScrollView } from "react-native";
 // import Ionicons from "@expo/vector-icons/Ionicons";
 import Modal from "./components/modules/Modal";
 import TopBar from "./components/modules/TopBar";
-import HomeScreen from "./components/HomeScreen";
+
+import HomeScreen from "./components/screens/HomeScreen";
+import Message from "./components/screens/Message";
+import Announcements from "./components/screens/Announcements";
+import Menu from "./components/screens/Menu";
+import Notifications from "./components/screens/Notifications";
+
 import { useState } from "react";
 
 export default function App() {
+  // This state is used to store the menuID
   const [menuModal, setMenuModal] = useState(3);
+
+  // This state is used to store the scroll pages
+  const [scrollPages, setScrollPages] = useState(<HomeScreen />);
+
+  // This function sends the menuID to the parent component
+  function handleSetMainMenuID(menuID: number) {
+    setMenuModal(menuID);
+    handleSetScrollPages(menuID);
+  }
+
+  const handleSetScrollPages = (menu: any) => {
+    if (menu === 1) {
+      setScrollPages(<Message />);
+    } else if (menu === 2) {
+      setScrollPages(<Announcements />);
+    } else if (menu === 3) {
+      setScrollPages(<HomeScreen />);
+    } else if (menu === 4) {
+      setScrollPages(<Notifications />);
+    } else if (menu === 5) {
+      setScrollPages(<Menu />);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.topbarContainer}>
@@ -19,13 +50,16 @@ export default function App() {
       <View style={styles.containerScrollModal}>
         <View style={styles.containerMain}>
           <ScrollView style={styles.scrollContainer}>
-            <HomeScreen />
+            {scrollPages}
             <View style={styles.vacantContainer}></View>
             {/* <StatusBar style="auto" /> */}
           </ScrollView>
         </View>
         <View style={styles.modalContainer}>
-          <Modal menuModal={menuModal} />
+          <Modal
+            menuModal={menuModal}
+            handleSetMainMenuID={handleSetMainMenuID}
+          />
         </View>
       </View>
     </View>

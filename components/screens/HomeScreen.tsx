@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, ScrollView } from "react-native";
 import { StyleSheet } from "react-native";
-import PostCard from "./modules/PostCard";
+import PostCard from "../modules/PostCard";
 import { useState } from "react";
 
 const posts = [
