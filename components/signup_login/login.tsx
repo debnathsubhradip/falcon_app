@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import { StyleSheet } from "react-native";
 
-function SignUp(props: any) {
+function Login(props: any) {
   return (
     <View style={styles.pageStyle}>
       <Image
@@ -11,7 +11,7 @@ function SignUp(props: any) {
       ></Image>
       <View style={styles.container}>
         <View style={styles.titleCard}>
-          <Text style={styles.titleText}>Sign Up</Text>
+          <Text style={styles.titleText}>Login</Text>
         </View>
         <View style={styles.allTextInputBoxView}>
           <View style={styles.textInputBoxView}>
@@ -31,13 +31,13 @@ function SignUp(props: any) {
         <View style={styles.totalInputButton}>
           <View style={styles.buttonInputBox}>
             <TouchableOpacity style={styles.buttonTopacText}>
-              <Text style={styles.buttonText}>Log In</Text>
+              <Text style={styles.buttonText}>Sign Up</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.buttonInputBox}>
             <TouchableOpacity style={styles.buttonTopacText}>
-              <Text style={styles.buttonText}>Sign Up</Text>
+              <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -46,7 +46,7 @@ function SignUp(props: any) {
   );
 }
 
-export default SignUp;
+export default Login;
 
 const styles = StyleSheet.create({
   pageStyle: {
@@ -96,11 +96,11 @@ const styles = StyleSheet.create({
     alignContent: "center",
     justifyContent: "center",
     alignItems: "center",
-
     color: "#000000",
     fontWeight: "bold",
     fontSize: 20,
     // flex: 1,
+    // backgroundColor: "red",
     maxHeight: "auto",
   },
   allTextInputBoxView: {

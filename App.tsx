@@ -11,6 +11,7 @@ import Menu from "./components/screens/Menu";
 import Notifications from "./components/screens/Notifications";
 
 import SignUp from "./components/signup_login/signup";
+import Login from "./components/signup_login/login";
 
 import { useState } from "react";
 
@@ -65,6 +66,7 @@ export default function App() {
       </View> */}
 
       <SignUp />
+      {/* <Login /> */}
     </View>
   );
 }
