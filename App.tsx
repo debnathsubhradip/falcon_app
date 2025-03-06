@@ -10,6 +10,8 @@ import Announcements from "./components/screens/Announcements";
 import Menu from "./components/screens/Menu";
 import Notifications from "./components/screens/Notifications";
 
+import SignUp from "./components/signup_login/signup";
+
 import { useState } from "react";
 
 export default function App() {
@@ -24,7 +26,7 @@ export default function App() {
     setMenuModal(menuID);
     handleSetScrollPages(menuID);
   }
-
+  // This function sets the scroll pages
   const handleSetScrollPages = (menu: any) => {
     if (menu === 1) {
       setScrollPages(<Message />);
@@ -41,7 +43,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.topbarContainer}>
+      {/* <View style={styles.topbarContainer}>
         <View style={styles.topbarContainer1}>
           <TopBar />
         </View>
@@ -52,7 +54,6 @@ export default function App() {
           <ScrollView style={styles.scrollContainer}>
             {scrollPages}
             <View style={styles.vacantContainer}></View>
-            {/* <StatusBar style="auto" /> */}
           </ScrollView>
         </View>
         <View style={styles.modalContainer}>
@@ -61,7 +62,9 @@ export default function App() {
             handleSetMainMenuID={handleSetMainMenuID}
           />
         </View>
-      </View>
+      </View> */}
+
+      <SignUp />
     </View>
   );
 }
